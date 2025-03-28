@@ -8,7 +8,8 @@ KEY = os.environ.get("API_KEY")
 
 
 def get_weather() -> dict:
-    params = {"key": KEY, "q": FILTERING}
+    print("Performing request to Weather API for city Paris...")
+    params = {"key": KEY, "city": FILTERING}
     response = requests.get(URL, params=params)
     return response.json()
 
